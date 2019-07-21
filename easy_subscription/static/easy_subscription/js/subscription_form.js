@@ -9,6 +9,12 @@ document.querySelector('.popup-close-button[newsletter-form=""]').addEventListen
   document.querySelector('.popup-overlay[newsletter-form=""][active="true"]').setAttribute('active', 'false');
 });
 
+document.querySelector('.popup-overlay[newsletter-form=""]').addEventListener('click', function(e) {
+  if (e.target === this && this.getAttribute('active') === 'true') {
+    this.setAttribute('active', 'false');
+  }
+});
+
 document.querySelector('.popup-form[newsletter-form=""]').addEventListener('submit', function(e) {
   e.preventDefault();
   var form_data = new FormData(this);

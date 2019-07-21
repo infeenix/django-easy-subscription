@@ -216,12 +216,7 @@ input[newsletter-form=""] {
 input[newsletter-form=""]:focus {
   border-color: #00cfd1;
 }
-.popup-form[newsletter-form=""] {
-  border: 3px solid #00cfd1;
-}
-.popup-form-submit[newsletter-form=""] {
-  background-color: #f96332;
-}
+
 .popup-form-submit[newsletter-form=""]:hover {
   box-shadow: 0 3px 8px 0 rgba(0,0,0,0.17);
 }

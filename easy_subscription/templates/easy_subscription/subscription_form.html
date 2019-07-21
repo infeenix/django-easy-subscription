@@ -5,10 +5,10 @@
     <svg newsletter-form class="popup-close-button">
       <use xlink:href="#popup-form-svg-cross"></use>
     </svg>
-    <form newsletter-form class="popup-form" method="post" action="{% url 'easy_subscription_subscribe' %}">
+    <form newsletter-form class="popup-form" method="post" action="{% url 'easy_subscription_subscribe' %}" style="border: 3px solid {{ form_border_color }}">
       <div newsletter-form class="popup-form-header">
-        <h3 newsletter-form><strong>{% trans 'Suscripción a nuestro boletín' %}</strong></h3>
-        <p newsletter-form>{% trans 'Puedes confiar en nosotros,<br>solo te enviaremos cosas buenas' %}.</p>
+        <h3 newsletter-form><strong>{{ title|linebreaksbr }}</strong></h3>
+        <p newsletter-form>{{ subtitle|linebreaksbr }}</p>
       </div>
       <div newsletter-form class="popup-form-body">
         <div newsletter-form class="popup-form-body-row">
@@ -27,11 +27,11 @@
         </div>
         {% csrf_token %}
         <div newsletter-form class="popup-form-body-row">
-          <input newsletter-form type="submit" class="popup-form-submit" value="{% trans 'Subscribe' %}">
+          <input newsletter-form type="submit" class="popup-form-submit" value="{% trans 'Subscribe' %}" style="background-color: {{ form_button_color }}">
         </div>
       </div>
       <div newsletter-form class="popup-form-footer">
-        <p newsletter-form class="popup-form-info">{% trans 'Puedes cancelar la suscripción en cualquier momento.' %}</p>
+        <p newsletter-form class="popup-form-info">{{ footer_message|linebreaksbr }}</p>
       </div>
     </form>
   </div>

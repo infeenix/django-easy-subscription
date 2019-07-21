@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
+from .integrations import get_integration
 
 
 class Subscriber(models.Model):
@@ -20,3 +21,21 @@ class Subscriber(models.Model):
 
     def __str__(self):
         return '{} {} <{}>'.format(self.first_name, self.last_name, self.email)
+
+    def upload(self):
+        integration = get_integration()
+        success = integration.subscribe(self)
+        if success:
+            self.uploaded = True
+            self.save(update_fields=['uploaded'])
+
+    def unsubcribe(self, delete=False):
+        if self.uploaded:
+            integration = get_integration()
+            success = integration.unsubscribe(self, delete=delete)
+            if success:
+                if delete:
+                    self.delete()
+                else:
+                    self.subscribed = False
+                    self.save(update_fields=['subscribed'])

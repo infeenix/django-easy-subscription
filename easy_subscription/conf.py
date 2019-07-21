@@ -38,10 +38,17 @@ class Settings(AppSettings):
     A dictionary of the credentials to use with the selected integration.
     """
 
+    EASY_SUBSCRIPTION_FORM_TITLE = _('Join our Newsletter')
+
+    EASY_SUBSCRIPTION_FORM_SUBTITLE = _('You can trust us,\nwe will only send you the good stuff.')
+
+    EASY_SUBSCRIPTION_FORM_FOTTER_MESSAGE = _('You can cancel the subscription at any time.')
+
     EASY_SUBSCRIPTION_FORM_THANK_YOU_MESSAGE = _('Thank you for subscribing!')
-    """
-    Thank you message after user subscribed
-    """
+
+    EASY_SUBSCRIPTION_FORM_BORDER_COLOR = '#0C4B33'
+
+    EASY_SUBSCRIPTION_FORM_BUTTON_COLOR = '#44B78B'
 
 
 settings = Settings()

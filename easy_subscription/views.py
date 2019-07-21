@@ -15,7 +15,8 @@ class SubscribeView(FormView):
 
     def form_valid(self, form):
         subscriber = form.save()
-        #subscriber.upload()
+        if settings.EASY_SUBSCRIPTION_UPLOAD_SUBSCRIBERS:
+            subscriber.upload()
         return JsonResponse({'message': settings.EASY_SUBSCRIPTION_FORM_THANK_YOU_MESSAGE}, status=200)
 
     def form_invalid(self, form):
