@@ -10,6 +10,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 REQUIREMENTS = [
     'Django>=2.0.0',
     'django-countries-with-calling-codes>=0.1',
+    'py3dns>=3.2.0',
 ]
 
 

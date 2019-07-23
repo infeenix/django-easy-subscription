@@ -22,6 +22,10 @@ p[newsletter-form=""], a[newsletter-form=""] {
   font-weight: 400;
 }
 
+h3[newsletter-form=""] {
+  color: #000;
+}
+
 a[newsletter-form=""] {
   text-decoration: none;
 }
@@ -91,7 +95,7 @@ input[newsletter-form=""] {
   -ms-flex-pack: center;
   justify-content: center;
   background: rgba(77, 77, 77, 0.8);
-  z-index: 999999;
+  z-index: 99999;
   height: 0;
 }
 
@@ -211,10 +215,11 @@ input[newsletter-form=""] {
   top: 8px;
   right: 8px;
   box-sizing: content-box;
+  z-index: 999999;
 }
 /********** FORM COLOR  **********/
 input[newsletter-form=""]:focus {
-  border-color: #00cfd1;
+  border-color: #c6c6c6;
 }
 
 .popup-form-submit[newsletter-form=""]:hover {
